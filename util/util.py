@@ -5,6 +5,15 @@ import tensorflow as tf
 import cv2
 import numpy as np
 
+
+def ScaleImage(x, scale):
+    # 这里不加as_list()函数，后面的操作无法进行
+    [n, h, w, c] = x.get_shape().as_list()
+    newh = int(round(h * scale))
+    neww = int(round(w * scale))
+    newx = tf.image.resize_images(x, [newh, neww], method=0)
+    return newx
+
 #图片归一化
 def ImgUniform(img):
     return img / 255

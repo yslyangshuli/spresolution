@@ -8,7 +8,11 @@ import os
 
 class BaseTrain(object):
 
-    def __init__(self, datalistpath, trainpath, checkpoint, logout):
+    def __init__(self,
+                 datalistpath,
+                 trainpath,
+                 checkpoint,
+                 logout):
         self.datalistpath = datalistpath
         self.trainpath = trainpath
         self.checkpoint = checkpoint
